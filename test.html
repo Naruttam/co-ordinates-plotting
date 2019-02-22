@@ -1,0 +1,130 @@
+ <?php
+
+                        /*$patAns = unserialize($quesVal['patient_answers']); 
+                        
+                        foreach ($patAns as $key => $value) { 
+                            $offsetArr = explode(":", $value); 
+
+                            $webArray = explode(",", $offsetArr[0]);
+                            $pdfArray = explode(",", $offsetArr[1]);  */  
+                            ?>
+
+                            <script type="text/javascript">
+                            
+                            /*if(!clearflag){
+                                coOrdinates.push({'left' : <?php echo $webArray[0]; ?>, 'top': <?php echo $webArray[1]; ?>, 'divX':<?php echo $pdfArray[0]; ?>, 'divY': <?php echo $pdfArray[1]; ?> });
+                                    $(document).ready(function(){
+                                        console.log(window.innerWidth);
+                                        console.log(<?php echo $webArray[0]; ?>);
+                                        console.log(<?php echo $webArray[1]; ?>);
+                                        
+                                        oldWidth = $(window).width();
+                                        
+                                        $('.map').append($('<i class="fa fa-crosshairs " />').css({
+                                            color: 'red',
+                                            position: 'absolute',
+                                            left: <?php echo $webArray[0]; ?>,
+                                            top: <?php echo $webArray[1]; ?>
+                                        }));
+                                    });
+
+                                    $( window ).resize(function() {
+
+                                        var bounds = $("#canvas")[0].getBoundingClientRect();
+
+                                        console.log(bounds);
+
+                                        console.log($('.map img').offset().left);
+                                        console.log($('.map img').offset().top);*/
+                                        //alert("Window resized to "+window.innerWidth);
+                                        /*newWidth = window.innerWidth;
+
+                                        var changePercent = newWidth/oldWidth;
+                                        
+                                        var amtOfpercentIncOrDec = (100 - (changePercent*100))+13;
+                                        console.log(amtOfpercentIncOrDec);*/
+                                        /*$('.fa-crosshairs').remove();
+                                        var newx = <?php echo $pdfArray[0]; ?>;
+                                        var newy = <?php echo $pdfArray[1]; ?>;
+                                        
+                                        newx = bounds.left + newx;
+                                        newy = $('.map img').offset().top + newy;
+                                        //newy = newx -(newy * 0.14);
+                                        console.log(newx);
+                                        console.log(newy);
+
+                                        $('.map').append($('<i class="fa fa-crosshairs " />').css({
+                                            color: 'green',
+                                            position: 'absolute',
+                                            left: newx,
+                                            top: newy
+                                        }));
+
+                                    });
+
+                            }*/
+                            </script>
+                       <?php //}?> 
+
+                       <script>
+                            /*$('.map img').on('click', function(ev) {
+                                console.log(ev, $(this));
+                                $('.map').append($('<i class="fa fa-crosshairs " />').css({
+                                    color: 'red',
+                                    position: 'absolute',
+                                    left: ev.pageX - 7,
+                                    top: ev.pageY - 7
+                                }));
+
+
+                                var X = ev.pageX - $('.map img').offset().left;
+                                var Y = ev.pageY - $('.map img').offset().top;
+
+                                var divX = Math.ceil(X);
+                                var divY = Math.ceil(Y);
+                                console.log(divX);
+                                console.log(divY);
+                                coOrdinates.push({'left' : ev.pageX - 7, 'top': ev.pageY - 7, 'divX':divX, 'divY':divY });
+                                
+                                $('#markbodypart').prop('checked', false);
+                                ajaxSave('answer_image_<?php echo $quesVal['id']; ?>');
+                            }); */
+                        </script>            
+                    
+                        <!-- <div class="map" id="canvas">      
+                            <?php //echo "<img src='/".$quesVal['question_text']."' style='cursor: crosshair;' alt='body FRONT BACK' width='500'>" ?>       
+                            <div class="form-group text-center">
+                                <div class="checkbox">
+                                <label> -->
+                                    <!-- <input type="checkbox" onclick ="removeMarks(<?php echo $quesVal['id']; ?>);" id = "markbodypart"  <?php //if(empty($quesVal['patient_answers'])){//echo "checked";} ?>  > NOT CURRENTLY EXPERIENCING PAIN-->
+                                <!-- </label>
+                                <label>
+                                <a class="btn btn-primary" href ="javascript:void(0);" onclick ="removeMarks(<?php echo $quesVal['id']; ?>,<?php //echo $value['id']; ?>);" >Remove All Marks </a>
+                                </label>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <span ng-repeat="(key, answer) in answerAttributeArray" ng-init="setDefaultValue(answer.default_value, 'frm' + frmIndex + 'Q' + queid.ordering + answer.uniqueAnsKey, 'number')"> -->
+                            <div class="map" style="position: relative; display: inline-block">
+                                    <!--<img src='/images/FormAutomation/{{answer.attribute_value}}' id="img_coordinates" style='cursor: crosshair;' alt='img' width='500' >-->    
+                                    
+                                    <canvas id="canvas" width="500" height="500" style="cursor:crosshair"></canvas>
+                                    
+                                    <input type="text" id='imageName' name ='imageName' style="display:none;" >
+                            </div>
+                            <div class="form-group removemark" style="display:block">
+                                <div class="checkbox">
+                                <label style="margin:5px 0 0 0;padding: 0;">
+                                    <a class="btn btn-primary" href ="javascript:void(0);" ng-attr-id="{{(queid.user_access == 'Patient' && view =='crm') ? 'disableId' : 'removeMarks'}} " >Remove All Marks</a>
+                                </label>
+                                </div>
+                            </div>
+                            <input type="hidden" id="imageparams" class="form-control" style="display:none;" value="<?php echo $quesVal['patient_answers']; ?>"/>
+                            <?php
+                                
+                                
+                            ?>
+                           
+                            
+                        <!-- </span> -->
