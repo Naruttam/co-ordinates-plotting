@@ -16,6 +16,14 @@
 		    margin-left: 50px;
     		margin-top: 50px;
 		}
+		#click-on-image{
+			background:url(pmbsd-human-body-diagram.png) no-repeat;
+			/*background-size: 500px 450px;*/
+			display: inline-block;
+			width:100%;
+			height:600px;
+			cursor:crosshair;
+		}
 	</style>
 </head>
 <body>
@@ -30,22 +38,35 @@
 		</div>
 		<p>This is some text.</p> 
 		<p>This is another text.</p> 
+
+		<div class="row">
+			<div class="col-md-4 col-xs-6">
+				<img src="41fk6+YRytL.png" width="300px">
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<img src="preview.png" width="300px">
+			</div>
+			<div class="col-md-4 col-xs-6">
+				<img src="images.png" width="300px">
+			</div>
+		</div>
 	
 
 	
 		<div class="map" id="click-on-image">      
-       		<img src="pmbsd-human-body-diagram.png" style='cursor: crosshair;border:1px dotted;' alt='body FRONT BACK' width='800' height="600">
-            <div class="form-group text-center">
-                <!-- <div class="checkbox">
-       				<label> -->
-                        <!-- <input type="checkbox" onclick ="removeMarks(<?php echo $quesVal['id']; ?>);" id = "markbodypart"  <?php //if(empty($quesVal['patient_answers'])){//echo "checked";} ?>  > NOT CURRENTLY EXPERIENCING PAIN-->
-                    <!-- </label>
-                    <label>
-                    	<a class="btn btn-primary" href ="javascript:void(0);" onclick ="removeMarks(<?php echo $quesVal['id']; ?>,<?php //echo $value['id']; ?>);" >Remove All Marks </a>
-                    </label>
-                </div>-->
-            </div>
+       		<!-- <img src="pmbsd-human-body-diagram.png" style='cursor: crosshair;border:1px dotted;max-width:100%' alt='body FRONT BACK' width='800' height="600"> -->
+            
 	    </div>
+	    <div class="form-group text-center">
+            <!-- <div class="checkbox">
+   				<label> -->
+                    <!-- <input type="checkbox" onclick ="removeMarks(<?php echo $quesVal['id']; ?>);" id = "markbodypart"  <?php //if(empty($quesVal['patient_answers'])){//echo "checked";} ?>  > NOT CURRENTLY EXPERIENCING PAIN-->
+                <!-- </label>-->
+                <label>
+                	<a class="btn btn-primary" href ="javascript:void(0);" onclick ="removeMarks(<?php echo $quesVal['id']; ?>,<?php //echo $value['id']; ?>);" >Remove All Marks </a>
+                </label>
+            <!--</div>-->
+        </div>
 	
 	<canvas id="tick-body-part" width="690" height="651" style="cursor:crosshair;background:url(pmbsd-human-body-diagram.png) no-repeat;"></canvas>
 	</div>
